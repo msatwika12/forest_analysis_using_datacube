@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Forest Analysis</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+  integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+  crossorigin=""/>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.css" />
+        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet-src.js"></script>
+        <script src="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  
+        <script rel="javascript" type="text/javascript" href="js/jquery-1.11.3.min.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/leaflet.pm@latest/dist/leaflet.pm.css" />
+  <!---------------------------------------------------------------------------  -->
+  
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+  crossorigin=""/>
+  
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.pm@latest/dist/leaflet.pm.css" />
+  
+  
+  
+  
+  <style  >
+  #map
+  {height:500px;
+    
+  }
+
+  #imageContainer 
+  {
+  height: 500px; /* Set the desired constant height */
+   /* Enable vertical scrolling */
+  }
+
+#imageContainer1 
+{
+  height: 500px; /* Set the desired constant height */
+  /* Enable vertical scrolling */
+}
+#first_i
+{
+  height: 320px;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 60;
+  
+}
+#second_i
+{
+  height: 380px;
+  max-width: 100%;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left:110px;
+  margin-top:-55px;
+  
+}
+#last_two
+{
+  width: 500px;
+  height:500px;
+
+  
+}
+
+  </style>
+
+  <script src="http://cdn.leafletjs.com/leaflet-0.7/leaflet.js"></script>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+     integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+     crossorigin=""></script>
+     <script src="https://unpkg.com/leaflet.pm@latest/dist/leaflet.pm.min.js"></script>
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<!-- ------------------------------------------------------- -->
+  <!-- <a href="/" class="middle">click for refresh</a> -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+  integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+  crossorigin=""></script>
+  <script src="https://unpkg.com/leaflet.pm@latest/dist/leaflet.pm.min.js"></script>
+  <!-- ------------------------------------------------------------------------- -->
+
+
+  
+
+  <style>
+    .navbar-brand:hover 
+    {
+      color: white !important;
+    }
+    
+    .navbar-nav .nav-link:hover
+     {
+      color: black !important;
+     }
+    </style>
+    <style>
+      .navbar 
+      {
+        background-color: orange;
+        border-top: 2px solid orange;
+        border-bottom: 2px solid orange;
+      }
+      #imageContainer1{
+        overflow-x: auto;
+        }
+       #imageContainer{
+        overflow-x: auto;
+      }
+      </style>
+      
+    
+    <nav class="navbar navbar-expand-lg navbar-light bg-secondary">
+      <div class="container-fluid">
+        <a class="navbar-brand mb-0 h1" href="/">FOREST ANALYSIS</a>
+        
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link text-white" href="/">HOME</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#">ABOUT US</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#">CONTACT US</a>
+            </li>
+          </ul>
+        
+        </div>
+      </div>
+    </nav>
+    
+    
+      
+    
+  
+  
+    <style>
+      .loading-spinner {
+          display: none;
+        }
+    </style>
+    
+    <script>
+         window.onload = function() {
+      
+    
+          var alertMessage = "{{ al_m}}";
+          if (alertMessage) {
+            var alertDiv = document.createElement("div");
+            alertDiv.classList.add("alert");
+            alertDiv.innerHTML = alertMessage;
+            document.body.insertBefore(alertDiv, document.body.firstChild);
+          }
+        };
+      </script>
+      <div class="conatiner mb-5 mt-3">
+      <div class="container-fluid">
+       
+      <div class="row mt-3">
+        <div class="col-md-6">
+          <div class="container">
+            <div id="map" class="img-css"></div>
+       
+          
+          
+          </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+          console.log("script entered : "); 
+              var x=[],y=[];
+             
+              
+                var map = L.map('map').setView([19.67, 78.53], 11);
+               
+               L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          maxZoom: 17,
+          attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+      }).addTo(map);
+                
+                
+         map.pm.addControls({
+        position: 'topleft',
+        drawCircle: false,
+        drawMarker: false,
+        drawCircleMarker:false,
+        drawPolyline:false,
+        drawPolygon:false,
+        cutPolygon:false,
+        editMode:false,
+        dragMode:false
+        
+      });
+      var x=[];
+      var y=[];
+      var x1=[];
+      var y1=[];
+      var layercount=0;
+      var layerMap={};
+      
+      function makePopupContent(feature){
+      
+        x=feature.geometry.coordinates[0][0];
+        y=feature.geometry.coordinates[0][2];
+        x1.push(x);
+        y1.push(y);
+        console.log("coordinates entered ");
+      
+       document.getElementById("disabledTextInput").value=x;
+       document.getElementById("disabledText").value=y;
+      
+        return `
+          ${feature.geometry.coordinates}   
+        `;
+      }
+      function setPupup(layer) {
+        console.log("entered into the setpupup ");
+        var feature = layer.toGeoJSON();
+         makePopupContent(feature);
+      
+      }
+      
+      map.on('pm:create', function(e) {
+        var layer = e.layer;
+        layercount++;
+        setPupup(layer);
+        layer.on('pm:update', function(e) {
+          console.log("entered pm creation ");
+          setPupup(e.layer);
+        });
+        
+      
+      
+      });
+      // ...
+    
+    // Function to handle layer removal
+    function handleLayerRemoval(layerx) {
+      
+      // Remove the layer from the map
+      map.removeLayer(layerx);
+    }
+    
+    // Add event listener for layer removal
+    map.on('pm:remove', function(e) {
+      var layer1= e.layer;
+      var t= layer1.toGeoJSON().geometry.coordinates[0][0];
+      var t1=layer1.toGeoJSON().geometry.coordinates[0][2];
+      console.log("what the hell is going on man ",t);
+      console.log(t);
+    
+    var t = x1.findIndex(function(element) {
+      return element.indexOf(t[0]) !== -1 && element.indexOf(t[1]) !== -1;
+    });
+    var t1 = y1.findIndex(function(element) {
+      return element.indexOf(t1[0]) !== -1 && element.indexOf(t1[1]) !== -1;
+    });
+    console.log(t); // Output: 1
+    x1.pop(t);
+    y1.pop(t1);
+      handleLayerRemoval(layer1);
+    });
+    
+    // ...
+    
+    
+    
+    
+    
+      
+      
+      var t_a;
+    
+      $(document).ready(function() {
+        $('#myForm').submit(function(event) {
+          event.preventDefault(); 
+          var loadingSpinner = document.querySelector('.loading-spinner');
+            loadingSpinner.style.display = 'block';
+             $.ajax({
+            url: '/form',
+            type: 'POST',
+            data: {
+              'start-date': $('#start-date').val(),
+              'end-date': $("#end-date").val(),
+              'option':$('#option').val(),
+              'x':JSON.stringify(x1),
+              'y':JSON.stringify(y1)
+            },
+            success: function(response) {
+              loadingSpinner.style.display='none';
+              console.log(response.message=="null");
+              console.log(response.ml_a==null);
+              var he=response.message=="null";
+              if(response.ml_a.length==0){
+                
+                alert("please select an area in the map");
+              }
+    
+              else if(he){
+                  loadingSpinner.style.display = 'none';
+             
+             var base64Array=response.pl_a;
+             var container = document.getElementById("imageContainer");
+             var container1= document.getElementById("imageContainer1");
+             var container3=document.getElementById('last_two');
+     
+     
+             container.innerHTML = "";
+             container1.innerHTML = "";
+             container3.innerHTML="";
+             var base64Array1=response.ml_a;
+             var imageContainer = document.getElementById("imageContainer");
+             imageContainer.style.display = "none";
+             var imageContainer1 = document.getElementById("imageContainer1");
+             imageContainer1.style.display = "none";
+             var last_two= document.getElementById("last_two");
+             last_two.style.display = "none";
+           
+             var ido=document.getElementById('option').value;
+             if(ido=='FOREST AREA' || ido=='ML PREDICTION'){
+               for(var i=0;i<base64Array1.length;i++){
+               var decs=atob(base64Array[i]);
+               var img=document.createElement('img');
+               img.src='data:image/png;base64,'+base64Array1[i];
+               img.id='last_i';
+               // var container=document.getElementById("imageContainer");
+               container3.appendChild(img);
+               var last_two= document.getElementById("last_two");
+               last_two.style.display = "block";
+               
+     
+     
+                 }
+     
+               }
+             else{
+               console.log("-------- ",base64Array.length)
+               for(var i=0;i<base64Array.length;i++){
+                 console.log("i value : ",i);
+               var decs=atob(base64Array[i]);
+               var img=document.createElement('img');
+               img.src='data:image/png;base64,'+base64Array[i];
+               img.id='first_i'
+               img.style.width='100%';
+               // var container=document.getElementById("imageContainer");
+               container.appendChild(img);
+               var img1=document.createElement('img');
+               img1.src='data:image/png;base64,'+base64Array1[i];
+               img1.id='second_i';
+               // var container=document.getElementById("imageContainer");
+               container1.appendChild(img1);
+     
+                   console.log("added child you know ");
+     
+             
+             var imageContainer = document.getElementById("imageContainer");
+             imageContainer.style.display = "block";
+             var imageContainer1 = document.getElementById("imageContainer1");
+             imageContainer1.style.display = "block";}
+             }
+      
+             t_a=response.totala;
+             
+             }
+          // else{
+          //   $(#messagecontainer).text(response.message);
+    
+          // }
+          else{
+            // console.log("if not fnull else part so error happenning ");
+            loadingSpinner.style.display = 'none';
+            // document.getElementById('messagecontainer').innerHTML="no dataset found ";
+            alert("The error can be :\n1. The range of coordinates are not applicable\n2. No data found in the range of dates\nUse high range date\ndonot go beyond the range of map\n");
+          }
+    
+    
+    
+    
+    
+            },
+            error:function(error){
+                console.log("erroor in ajax: ",error);
+            }
+    
+          });
+        });
+      });
+    
+    
+    
+    
+    
+      var ba=''
+      function writein(){
+        console.log(t_a);
+        t_a=t_a.toString()
+        ba+='total area : '+String(t_a);
+        console.log(ba);
+        document.getElementById('info').innerHTML=ba;
+      
+      }
+      
+      
+      </script>
+      <div class="col-md-6">
+        <div class="container">
+          <form id="myForm" action="/form" method="POST" class="form-container">
+            <div class="form-group heading">
+              <label for="start-date" class="heading">Start Date:</label>
+              <input type="date" class="form-control mt-2" id="start-date" name="start-date"  value='2018-01-01' required >
+            </div>
+            <div class="form-group heading">
+              <label for="end-date" class="heading">End Date:</label>
+              <input type="date" class="form-control mt-2" id="end-date" name="end-date" value='2024-01-01' required>
+            </div>
+            <div class="form-group heading">
+              <label for="dropdown" class="heading">ANALYSIS:</label>
+              <select class="form-control mt-3" id="option" name="option" required>
+                <option value="">--Select--</option>
+                <option>NDVI</option>
+                <option>NDWI</option>
+                <option>FOREST AREA</option>
+                <option>ML PREDICTION</option>
+              </select>
+            </div><div class="text-center mt-3">
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div></form>
+        </div>
+      </div>
+    </div>   
+            <!-- <div class="btn btn-primary" onclick="writein()">analysis</div> -->
+            <div class="d-flex justify-content-center align-items-center mt-4">
+              <div class="loading-spinner">
+                <div class="spinner-border text-success" role="status">
+                  <span class="visually-hidden">Loading.....</span>
+                </div>
+              </div>
+            </div>
+        
+        
+        
+    
+    
+      <div style="text-align: center;">
+      <p id="info">
+        
+      </p></div>
+    <!-- <div class="container " >
+      <p id="messagecontainer"></p>
+      
+    </div> -->
+      <div class="row">
+      <div class="col-md-6">
+      <div class="container everyting" id="imageContainer">
+    
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="container everyting "  id="imageContainer1">
+    
+      </div>
+    </div>
+      </div>
+      <div class="container everyting " id="last_two">
+    
+      </div>
+    </div> 
+      </div>
+
+</html>
